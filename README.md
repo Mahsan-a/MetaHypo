@@ -18,7 +18,8 @@ metahypo/
 │   ├── metahypo.py        # MAML meta-training and per-patient adaptation
 │   └── evaluate.py        # Per-patient metrics and threshold calibration
 ├── train.py               # Full cross-validation training script
-├── data/                  # Dataset files available upon request
+├── Data/                  # Dataset files available upon request
+│   └── data_utils.py      # CGM loading, CWT computation, dataset classes
 └── README.md
 ```
 
@@ -46,7 +47,7 @@ The datasets supported by this framework include:
 pip install torch numpy scikit-learn
 
 # Prepare CGM data (computes CWT scalograms from raw glucose CSVs)
-python src/data_utils.py --data/cgm_csvs path as data_dir and --data/scalograms as out_dir 
+python Data/data_utils.py --Data/cgm_csvs path as data_dir and --Data/scalograms as out_dir 
 
 # Run full 5-fold cross-validation
 python scripts/train.py
